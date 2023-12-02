@@ -31,12 +31,34 @@ function closeModal(modal) {
 const removeErrorMessages = () => {
     const errorMessages = document.querySelectorAll(".error-message");
     const errorBorders = document.querySelectorAll(".error-input");
+    const errorContainer = document.querySelectorAll(".error-container");
     errorMessages.forEach((errorMessage) => {
         errorMessage.remove();
     });
     errorBorders.forEach((errorBorder) => {
         errorBorder.classList.remove("error-input");
     });
+    errorContainer.forEach((errorContainer) => {
+        errorContainer.remove();
+    });
+};
+
+//Cleaning a single input of its error message
+
+const removeIndividualError = (inputDiv) => {
+    const errorMessage = inputDiv.querySelector(".error-container");
+    if (errorMessage) {
+        errorMessage.remove();
+    }
+};
+
+//remove the border from an input element
+
+const removeIndividualBorder = (inputDiv) => {
+    const errorBorder = inputDiv.querySelector(".error-input");
+    if (errorBorder) {
+        errorBorder.classList.remove("error-input");
+    }
 };
 
 //Closing the modal
